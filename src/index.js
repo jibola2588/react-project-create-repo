@@ -7,14 +7,17 @@ import './index.css'
 // import Jibola from './components/Jibola'
 
 // import {Counter } from './pages/Counter'
-import {Form}  from './pages/Form'
+import {Home } from './pages/Home'
 // import DynamicProps  from './pages/DynamicProps'
+
+
 
 const App = () => { 
   // const [show,setShow] =  useState(true)
     return ( 
         <div className = "text-center">
-        <Form />
+        
+        <Home />
          {/* <FirstStateElement /> */}
         {/* <Jibola /> */}  
         {/* {show && <FirstStateClass/>  } 
