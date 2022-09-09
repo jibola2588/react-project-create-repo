@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 // controlled form
 
-export class Form extends Component {
+export class LoginUser extends Component {
     constructor(props) {
       super(props)
     
@@ -25,10 +25,9 @@ export class Form extends Component {
     return (
        <div
        style = {{
-        height:'100vh',
+        // height:'100vh',
         display:'flex',
-       justifyContent:'center',
-       alignItems:'center'
+       justifyContent:'center'
         }}>
       <form 
         onSubmit = {this.handleSubmit}
@@ -76,7 +75,7 @@ export class Form extends Component {
                 }}
                 />
               </div>
-              <div className="top">
+              {/* <div className="top">
                   <label>confirm password :</label>
                 <input 
                 type="password" 
@@ -93,8 +92,8 @@ export class Form extends Component {
                  
                 }}
                 />
-              </div>
-              <button
+              </div> */}
+              {/* <button
               style = {{
                 width:'100%',
                 padding:'15px',
@@ -104,7 +103,7 @@ export class Form extends Component {
                 color:"#fff"
             }}
             type = "submit"
-              >sign in</button>
+              >sign in</button> */}
         
       </form>
 
