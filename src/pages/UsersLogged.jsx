@@ -30,7 +30,7 @@ export  class UsersLogged extends Component {
     return (
       <div>
         <h3 
-        style = {{textAlign:'center'}}
+        style = {{textAlign:'center', marginBottom: '30px'}}
         >
              {this.state.display ?  "Signin" : "Welcome user,complete your profile"}
         </h3>

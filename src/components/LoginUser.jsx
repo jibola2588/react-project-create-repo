@@ -63,7 +63,7 @@ export class LoginUser extends Component {
                 <input 
                 type="password" 
                 style = {{
-                    width:'95%',
+                    width:'95%', border: '1px solid grey', backgroundColor: '', outline: 'none'
                     
                 }}
                 value = {this.state.password}
