@@ -16,7 +16,10 @@ export const FunctionalForm = () => {
       <form action="" class="p-8 mt-6 mb-0 rounded-lg shadow-2xl space-y-4" 
       onSubmit = {e => {
         e.preventDefault();
+        // console.log({email,password});
         console.log(user);
+        // setEmail('')
+        // setPassword('')
         setUser({ 
             email:'',
             password:''
@@ -30,7 +33,9 @@ export const FunctionalForm = () => {
   
           <div class="relative mt-1">
             <input
+            // value = {email}
             value = {user.email}
+            // onChange = {e => setEmail(e.target.value)}
             onChange = {e => setUser({email:e.target.value})}
               type="email"
               id="email"
@@ -62,7 +67,9 @@ export const FunctionalForm = () => {
   
           <div class="relative mt-1">
             <input
+            // value = {password}
             value = {user.password}
+             // onChange = {e => setPassword(e.target.value)}
             onChange = {e => setUser({...user,password:e.target.value})}
               type="password"
               id="password"
