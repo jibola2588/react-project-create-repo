@@ -2,12 +2,15 @@ import {useState} from 'react'
 
 
 export const FunctionalForm = () => {
-//    const [email,setEmail] = useState('')
-//    const [password,setPassword] = useState('')
-
         const [user,setUser] = useState({ 
-       email :" ",
-       password: '',
+          email:'',
+          password:'',
+          firstname:'',
+          lastname:'',
+          phone_number:'',
+          date_of_birth:'',
+          username:'',
+          role:'',
         })
 
   return (
@@ -16,14 +19,29 @@ export const FunctionalForm = () => {
       <form action="" class="p-8 mt-6 mb-0 rounded-lg shadow-2xl space-y-4" 
       onSubmit = {e => {
         e.preventDefault();
-        // console.log({email,password});
+      
         console.log(user);
-        // setEmail('')
-        // setPassword('')
-        setUser({ 
-            email:'',
-            password:''
+
+        fetch("https://staging.netvaluepay.com/api/v1/auth/signup/",{ 
+          method:"POST",
+          body:JSON.stringify(user),
+          headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
         })
+        .then(res => res.json())
+        .then(data => console.log(data))
+      
+        // setUser({ 
+        //     email:'',
+        //     password:'',
+        //     firstname:'',
+        //     lastname:'',
+        //     phone_number:'',
+        //     date_of_birth:'',
+        //     username:'',
+        //     role:'',
+        // })
          } }
       >
         <p class="text-lg font-medium">Sign in to your account</p>
@@ -31,11 +49,9 @@ export const FunctionalForm = () => {
         <div>
           <label for="email" class="text-sm font-medium">Email</label>
   
-          <div class="relative mt-1">
+          <div class="mt-1">
             <input
-            // value = {email}
             value = {user.email}
-            // onChange = {e => setEmail(e.target.value)}
             onChange = {e => setUser({email:e.target.value})}
               type="email"
               id="email"
@@ -43,73 +59,125 @@ export const FunctionalForm = () => {
               placeholder="Enter email"
             />
   
-            <span class="absolute inset-y-0 inline-flex items-center right-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                />
-              </svg>
-            </span>
+            
+          </div>
+        </div>
+        <div>
+          <label for="email" class="text-sm font-medium">firstName</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.firstname}
+            onChange = {e => setUser({...user,firstname:e.target.value})}
+              type="text"
+              id="firstname"
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
+          </div>
+        </div>
+        <div>
+          <label for="email" class="text-sm font-medium">lastname</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.lastname}
+            onChange = {e => setUser({...user,lastname:e.target.value})}
+              type="text"
+    
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
+          </div>
+        </div>
+        <div>
+          <label for="email" class="text-sm font-medium">username</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.username}
+            onChange = {e => setUser({...user,username:e.target.value})}
+              type="text"
+           
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
+          </div>
+        </div>
+        <div>
+          <label for="email" class="text-sm font-medium">phone number</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.phone_number}
+            onChange = {e => setUser({...user,phone_number:e.target.value})}
+              type="text"
+           
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
+          </div>
+        </div>
+        <div>
+          <label  class="text-sm font-medium">D.o.b</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.date_of_birth}
+            onChange = {e => setUser({...user,date_of_birth:e.target.value})}
+              type="text"
+             
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
+          </div>
+        </div>
+        <div>
+          <label for="email" class="text-sm font-medium">role</label>
+  
+          <div class="mt-1">
+            <input
+            value = {user.role}
+            onChange = {e => setUser({...user,role:e.target.value})}
+              type="text"
+         
+              class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
+              placeholder="Enter email"
+            />
+  
+            
           </div>
         </div>
   
         <div>
           <label for="password" class="text-sm font-medium">Password</label>
   
-          <div class="relative mt-1">
+          <div class=" mt-1">
             <input
-            // value = {password}
             value = {user.password}
-             // onChange = {e => setPassword(e.target.value)}
             onChange = {e => setUser({...user,password:e.target.value})}
               type="password"
               id="password"
               class="w-full p-4 pr-12 text-sm border-gray-200 rounded-lg shadow-sm"
               placeholder="Enter password"
             />
-  
-            <span class="absolute inset-y-0 inline-flex items-center right-4">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-gray-400"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
-                />
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
-                />
-              </svg>
-            </span>
           </div>
         </div>
   
         <button type="submit" class="block w-full px-5 py-3 text-sm font-medium text-white bg-indigo-600 rounded-lg">
           Sign in
         </button>
-  
-        <p class="text-sm text-center text-gray-500">
-          No account?
-          <a class="underline" href="">Sign up</a>
-        </p>
+
       </form>
     </div>
   </div>
