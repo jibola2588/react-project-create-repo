@@ -1,3 +1,5 @@
+//Class on Styled Component --- Friday, 2nd Sept, 2022
+
 import styled from 'styled-components'
 
 export const Container  = styled.div`

@@ -1,3 +1,5 @@
+//Class o 26th August 2022. 
+
 import React, { Component } from 'react';
 
 export class Card extends Component{   

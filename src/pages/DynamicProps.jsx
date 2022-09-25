@@ -1,3 +1,4 @@
+// TuesdaY 6th Sept. Dynamic Props/ Controlled Form
 import React from 'react';
 const DynamicProps = ({name,age,img,phone,email,fav}) => {
   return (

@@ -1,3 +1,6 @@
+//2nd Sept, 2022. States continued wit Styled Component implemented
+//
+
 import {Component} from 'react'
 import {Container,
 Header1,
@@ -33,7 +36,7 @@ export class Counter extends Component {
     //     //     count : this.state.count +1
     //     // })
     // }
-    handleClick(){ 
+    handleClick() { 
         this.setState((state) => ({ count : state.count +1 }))
     }
     
